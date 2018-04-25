@@ -18,7 +18,7 @@ cur = conn.cursor()
 def get_posts():
     try:
         cur.execute("SELECT * FROM post;")
-        ans = cur.fetchone()
+        ans = cur.fetchall()
         print("Get posts answer: ", ans)
         return ans or "blank"
     except psycopg2.Error as e:
