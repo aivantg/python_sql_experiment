@@ -16,24 +16,37 @@ cur = conn.cursor()
 
 
 def get_posts():
-    cur.execute("SELECT * FROM post;")
-    ans = cur.fetchone()
-    print(ans)
-    return ans
+    try:
+        cur.execute("SELECT * FROM post;")
+        ans = cur.fetchone()
+        print(ans)
+        return ans or "blank"
+    except:
+        conn.rollback();
+        return "blank"
 
 
 def create_post(title, description):
-    print("Creating post\ntitle: " + title + "\ndescription: " + description)
-    cur.execute("INSERT INTO post VALUES ('{0}', '{1}');".format(title, description))
-    conn.commit()
-    # do nothing
+    try:
+        print("Creating post\ntitle: " + title + "\ndescription: " + description)
+        cur.execute("INSERT INTO post VALUES ('{0}', '{1}');".format(title, description))
+        conn.commit()
+        # do nothing
+    except:
+        conn.rollback()
 
 def init_db():
-    print("Initializing db")
-    cur.execute("CREATE TABLE post (title text, description text);")
-    conn.commit()
+    try:
+        print("Initializing db")
+        cur.execute("CREATE TABLE post (title text, description text);")
+        conn.commit()
+    except:
+        conn.rollback()
     # Do nothing
 
 def drop_db():
-    cur.execute("DROP TABLE post")
-    conn.commit()
+    try:
+        cur.execute("DROP TABLE post")
+        conn.commit()
+    except:
+        conn.rollback()
