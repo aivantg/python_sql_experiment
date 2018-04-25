@@ -1,0 +1,127 @@
+@import 'variables';
+.post.card {
+	position: relative;
+
+	.post-number {
+		font-size: 1.5em;
+		margin-bottom: 12px;
+	}
+
+	.post-title {
+		margin: 0;
+		margin-bottom: 16px;
+		color: $gray;
+		font-size: 0.8em;
+	}
+
+	a {
+		padding: 8px 16px;
+		text-decoration: none;
+		display: block;
+		color: inherit;
+	}
+
+	.post-description {
+		font-size: 0.8em;
+		line-height: 2em;
+		margin-top: 16px;
+		margin-bottom: 8px;
+	}
+
+	.delete {
+		display: inline-block;
+		top: 0;
+		right: 0;
+		position: absolute;
+		font-size: 1.5em;
+		color: $gray;
+		opacity: 0.8;
+		transition: 0.2s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.post-resources {
+	display: flex;
+	flex-wrap: wrap;
+
+	.resource {
+		font-size: 0.8em;
+		transition: 0.3s;
+		position: relative;
+		background: $blue;
+		text-align: center;
+		margin-right: 24px;
+		color: white;
+		border-radius: 4px;
+		z-index: 2;
+		margin-top: 8px;
+
+
+		.resource-description {
+			z-index: -1;
+			display: none;
+			position: absolute;
+			background: $white;
+			padding: 16px;
+			width: 160px;
+			left: 50%;
+			transform: translateX(-50%) translateY(16px);
+			transition: 0.3s;
+			text-align: center;
+			font-size: 0.8em;
+			color: rgba(0, 0, 0, 0.8);
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+			&:before {
+				content: "";
+				width: 16px;
+				height: 16px;
+				display: block;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+				background: inherit;
+				border: 40px solid rgba(0, 0, 0, 0);
+				background-clip: padding-box;
+				box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1)
+			}
+		}
+
+		&:hover {
+			.resource-description {
+				display: block;
+			}
+		}
+	}
+
+	.add-resource {
+		padding: 8px 8px;
+		background: $off-white;
+	}
+}
+
+#resource-controls {
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+
+	.resource-edit-button.edit, .resource-edit-button.delete-resource a {
+		padding: 8px 16px;
+		background: $blue;
+		color: white;
+		border-radius: 4px;
+		margin: 8px 8px 0;
+		text-align: center;
+		cursor: pointer;
+
+		a {
+			padding: 0;
+			color: white;
+		}
+	}
+}

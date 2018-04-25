@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'Neuzeit';
+  src: font-url("neuzeit.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  margin: 0 auto;
+  font-family: "Neuzeit", Avenir, sans-serif;
+  background: #F7F7F7;
+  color: #505050; }
+
+main {
+  width: 600px;
+  margin-top: 80px;
+  margin-left: 340px;
+  padding-bottom: 80px;
+  position: relative; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: 400; }
+
+.card {
+  padding: 32px;
+  margin: 48px 0;
+  background: #FEFEFE;
+  border-radius: 4px;
+  transition: 0.3s; }
+  .card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); }
+
+.semester {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #ADADAD;
+  letter-spacing: 0.1em;
+  font-weight: 700; }
+
+.title {
+  margin: 16px 0;
+  font-size: 1.5em; }
+
+.modal-form {
+  display: none;
+  flex-direction: column;
+  color: #505050;
+  position: fixed;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 48px 56px;
+  background: #FEFEFE;
+  z-index: 4;
+  border-top: 6px solid #6E9AFF;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 320px;
+  transition: 0.4s; }
+  .modal-form h3 {
+    display: inline-block; }
+  .modal-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; }
+  .modal-form input, .modal-form textarea {
+    padding: 8px 8px;
+    width: 100%;
+    box-sizing: border-box;
+    outline-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+    border: 0px solid #ADADAD;
+    background: #F7F7F7; }
+    .modal-form input[type="submit"], .modal-form textarea[type="submit"] {
+      margin-top: 24px;
+      color: #FEFEFE;
+      background: #6E9AFF;
+      padding: 8px;
+      cursor: pointer; }
+    .modal-form input:focus, .modal-form textarea:focus {
+      outline-color: #6E9AFF; }
+  .modal-form .horizontal {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between; }
+    .modal-form .horizontal div {
+      margin-right: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1; }
+      .modal-form .horizontal div * {
+        flex-shrink: 1;
+        flex-grow: 0; }
+  .modal-form .field-title {
+    margin: 24px 0 6px;
+    color: #ADADAD;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; }
+
+.close, .delete {
+  position: absolute;
+  right: 8px;
+  top: 2px;
+  color: #ADADAD;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: 300;
+  opacity: 0.7;
+  transition: 0.3s; }
+  .close:hover, .delete:hover {
+    opacity: 1; }
+
+.button {
+  border-radius: 4px; }
+
+.overlay {
+  display: none;
+  color: #FEFEFE;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3; }
+  .overlay:after {
+    content: "";
+    background: black;
+    opacity: 0.7;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; }
+
+.add {
+  border: 1.5px dashed #ADADAD !important;
+  color: #ADADAD !important;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s; }
+  .add:hover {
+    opacity: 1; }
+
+i.edit-button {
+  padding: 0 8px;
+  color: #ADADAD;
+  opacity: 0.8;
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+  top: 3px; }
+  i.edit-button:hover {
+    opacity: 1; }
+
+/*# sourceMappingURL=common.css.map */
