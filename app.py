@@ -21,3 +21,7 @@ def init():
 def create():
     database.create_post(request.form['title'], request.form['description'])
     return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
+
+if __name__ == "__main__":
+	app.run()
