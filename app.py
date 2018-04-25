@@ -8,6 +8,10 @@ def index():
     generator.generate_index()
     return render_template('index.html')
 
+@app.route('/view')
+def view():
+    return database.get_posts()
+
 @app.route("/new")
 def new():
     return "new"
@@ -15,6 +19,11 @@ def new():
 @app.route("/init")
 def init():
     database.init_db()
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
+@app.route("/drop")
+def drop():
+    database.drop_db()
     return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 @app.route('/create', methods=['POST'])
